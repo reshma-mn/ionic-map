@@ -14,6 +14,7 @@ import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { LocationSelectPage } from '../pages/location-select/location-select';
 import { IonicStorageModule } from '@ionic/storage';
+import { PlacePage } from '../pages/place/place';
 
 
 @NgModule({
@@ -21,7 +22,7 @@ import { IonicStorageModule } from '@ionic/storage';
     MyApp,
     HomePage,
     DirectionPage,
- 
+    PlacePage,
     LocationSelectPage
     
   ],
@@ -37,7 +38,7 @@ import { IonicStorageModule } from '@ionic/storage';
     MyApp,
     HomePage,
     DirectionPage,
-   
+    PlacePage,
     LocationSelectPage
   ],
   providers: [

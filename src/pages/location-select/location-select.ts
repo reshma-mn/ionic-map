@@ -16,9 +16,8 @@ export class LocationSelectPage {
   map: any;
   markers:any;
 
-  public currentLocation;
-  public options : GeolocationOptions;
-  public  currentPos : Geoposition;
+
+ 
   public selectedplace:any[];
 
 
@@ -27,53 +26,49 @@ export class LocationSelectPage {
   }
 
   ionViewDidLoad() {
-              this.selectedplace=this.navParams.data;
+      this.selectedplace=this.navParams.data;
       this.nearbyPlace(this.selectedplace);
               }
   
 
 
-loadMap(){
+              loadMap(){
 
-this.geolocation.getCurrentPosition().then((position) => {
-
-let latLng = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
-
-let mapOptions = {
-center: latLng,
-zoom: 15,
-mapTypeId: google.maps.MapTypeId.ROADMAP
-}
-this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions)
-this.callback(this.selectedplace);
-}, (err) => {
-console.log(err);
-});
-}
-
-nearbyPlace(results){
-this.loadMap();
-
-this.callback(results);
-  
-}
-
-callback(results) {
-  for (var i = 0; i < results.length; i++) {
-    this.createMarker(results[i]);
-  }
-}
-
-createMarker(place){ 
-    
- let latlng = new google.maps.LatLng(place.geometry.location.lat, place.geometry.location.lng);
-   
-var markers = new google.maps.Marker({
-    map: this.map,
-    animation: google.maps.Animation.DROP,
-    position:latlng
-          });
-
-  }
-
-}
+                this.geolocation.getCurrentPosition().then((position) => {
+                
+                let latLng = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+                
+                let mapOptions = {
+                center: latLng,
+                zoom: 15,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+                }
+                this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions)
+                this.callback(this.selectedplace);
+                }, (err) => {
+                console.log(err);
+                });
+                }
+                
+                nearbyPlace(results){
+                this.loadMap();
+                          }
+                
+                callback(results) {
+                  for (var i = 0; i < results.length; i++) {
+                    this.createMarker(results[i]);
+                  }
+                }
+                
+                createMarker(place){ 
+                    
+                 let latlng = new google.maps.LatLng(place.geometry.location.lat, place.geometry.location.lng);
+                   
+                var markers = new google.maps.Marker({
+                    map: this.map,
+                    animation: google.maps.Animation.DROP,
+                    position:latlng
+                          });
+                    }
+                
+                }

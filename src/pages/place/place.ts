@@ -1,7 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ApiService } from '../../services/api.service';
-import { Geolocation, GeolocationOptions, Geoposition,PositionError  } from '@ionic-native/geolocation';
+import { Geolocation } from '@ionic-native/geolocation';
 
 declare var google;
 

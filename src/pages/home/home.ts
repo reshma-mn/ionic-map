@@ -1,11 +1,11 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { Geolocation, GeolocationOptions, Geoposition,PositionError  } from '@ionic-native/geolocation';
+import { Geolocation,  Geoposition,PositionError  } from '@ionic-native/geolocation';
 import { DirectionPage } from '../direction/direction';
 
 import { ApiService } from '../../services/api.service';
 import { locDetail } from '../../services/searchLocationDetail';
-import { LocationSelectPage } from '../location-select/location-select';
+
  
 declare var google;
  

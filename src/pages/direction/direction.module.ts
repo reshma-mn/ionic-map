@@ -4,7 +4,7 @@ import { DirectionPage } from './direction';
 
 @NgModule({
   declarations: [
-    DirectionPage,
+  
   ],
   imports: [
     IonicPageModule.forChild(DirectionPage),

@@ -1,12 +1,9 @@
-import { Component, NgZone, ElementRef, ViewChild } from '@angular/core';
-import { NavController, Platform } from 'ionic-angular';
-import { Geolocation ,GeolocationOptions ,Geoposition ,PositionError } from '@ionic-native/geolocation';
-import { LocationSelectPage } from '../location-select/location-select';
+import { Component } from '@angular/core';
+import { NavController} from 'ionic-angular';
 import { ApiService } from '../../services/api.service'
-import { TEMPLATE_DRIVEN_DIRECTIVES } from '@angular/forms/src/directives';
 import { PlacePage } from '../place/place';
 
-declare var google;
+
 
 @Component({
   selector: 'page-direction',
@@ -14,7 +11,7 @@ declare var google;
 })
 export class DirectionPage {
 
-  constructor(private api: ApiService, private geolocation : Geolocation,public navCtrl: NavController) { }
+  constructor(private api: ApiService,public navCtrl: NavController) { }
 
   places: any;
   item:any;

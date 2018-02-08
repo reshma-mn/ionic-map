@@ -12,17 +12,11 @@ declare var google;
 })
 export class DirectionPage {
 
-  
- 
-  
- 
   constructor(private api: ApiService, private geolocation : Geolocation,public navCtrl: NavController) { }
 
   places: any;
   
-
   ionViewDidLoad(){
-    
     
   }
 
@@ -31,15 +25,10 @@ export class DirectionPage {
   }
   
   placess(type){
-    console.log(type);
-    this.api.getPlacess(type).subscribe(res=>{
-      // console.log(res);
-      this.places = res.results;
-      // console.log(this.places)
-    })
   
+    this.api.getPlacess(type).subscribe(res=>{
+    this.places = res.results;  
+    }) 
   }
- 
- 
 
 }

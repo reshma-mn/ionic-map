@@ -15,25 +15,12 @@ declare var google;
 
 })
 export class HomePage {
-  // tab0Root: any =  HomePage;
-  // tab1Root: any =  LocationSelectPage;
-  // tab2Root: any =DirectionPage;
+
 
   public currentLocation;
   /**userposition */
   options : GeolocationOptions;
   currentPos :locDetail;
-
-
-  search: boolean = false;
-  toggled: boolean;
-  searchTerm: String = '';
-  items: string[];
-
- 
-  
-  
-
 
   public searchLocTerm:string;
   public searchLocationDetail:Geoposition;
@@ -46,8 +33,6 @@ export class HomePage {
 
   constructor(public navCtrl: NavController,public navParams: NavParams,
      public geolocation: Geolocation,private apiService: ApiService) {
-    this.toggled = false;
-     
  
   }
 
@@ -85,38 +70,4 @@ export class HomePage {
       position:  this.map.getCenter(),
     });
   }
-
-
-  // getUserPosition(){
-  //   console.log("hello")
-  //   this.options = {
-  //   enableHighAccuracy : false
-  //   };
-  //   this.geolocation.getCurrentPosition(this.options).then((pos : Geoposition) => {
-  //     console.log(pos.coords.latitude);
-  //     // this.currentPos = (pos.coords.latitude,pos.coords.longitude) ;   
-
-  //       console.log(pos);
-  //       this.apiService.addMarker(this.currentPos);
-
-  //   },(err : PositionError)=>{
-  //       console.log("error : " + err.message);
-  //   ;
-  //   })
-  // }
-
-  
-
-
-  // addInfoWindow(marker, content){
- 
-  //   let infoWindow = new google.maps.InfoWindow({
-  //     content: content
-  //   });
-   
-  //   google.maps.event.addListener(marker, 'click', () => {
-  //     infoWindow.open(this.map, marker);
-  //   });
-   
-  // }
 }

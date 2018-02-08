@@ -45,7 +45,7 @@ zoom: 15,
 mapTypeId: google.maps.MapTypeId.ROADMAP
 }
 this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions)
-
+this.callback(this.selectedplace);
 }, (err) => {
 console.log(err);
 });
@@ -53,9 +53,8 @@ console.log(err);
 
 nearbyPlace(results){
 this.loadMap();
-this.markers = [];
 
-            this.callback(results);
+this.callback(results);
   
 }
 
@@ -65,15 +64,14 @@ callback(results) {
   }
 }
 
-createMarker(place){
-    console.log(place)
-    console.log(place.geometry.location.lat)
-    var positionn = new google.maps.LatLng(place.geometry.location.lat, place.geometry.location.lng);
+createMarker(place){ 
+    
+ let latlng = new google.maps.LatLng(place.geometry.location.lat, place.geometry.location.lng);
+   
 var markers = new google.maps.Marker({
     map: this.map,
     animation: google.maps.Animation.DROP,
-    position: positionn,
-    
+    position:latlng
           });
 
   }

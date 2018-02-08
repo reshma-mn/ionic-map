@@ -30,7 +30,7 @@ export class ApiService {
   
 
     getPlacess(type: string): Observable<any> {
-        // console.log(this.latlng);
+        
         return this.http
             .get(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=AIzaSyCIDlI2Rr6L5NyU8dtmf9CThNRVFLgPvow&radius=5000&type=${type}&location=` + this.latlng)
             .map((response: Response) => {

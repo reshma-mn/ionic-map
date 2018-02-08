@@ -14,16 +14,19 @@ export class PlacePage {
   @ViewChild('map') mapElement: ElementRef;
   map: any;
   markers:any;
-  public selectedItem;
+  public selectedItem:any;
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public geolocation: Geolocation,public apiService:ApiService) {
+      this.selectedItem=this.navParams.data;
+      console.log(this.selectedItem.length);
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PlacePage');
-    this.selectedItem=this.navParams.data;
+    
     console.log(this.selectedItem);
     this.placeChoose(this.selectedItem);
+    
   }
 
   placeChoose(item:any){
@@ -38,12 +41,13 @@ export class PlacePage {
       mapTypeId: google.maps.MapTypeId.ROADMAP
       }
       this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions)
-      this.createMarker(item)
-      }, (err) => {
-      console.log(err);
-      });
-
-  }
+      console.log(this.selectedItem.length)
+      for (var i = 0; i < this.selectedItem.length; i++) {
+        console.log("sree")
+        this.createMarker(this.selectedItem[i]);
+      }
+});
+}
  
       
     
@@ -53,11 +57,21 @@ export class PlacePage {
       
    let latlng = new google.maps.LatLng(place.geometry.location.lat, place.geometry.location.lng);
      
-  var markers = new google.maps.Marker({
+   var markers = new google.maps.Marker({
       map: this.map,
       animation: google.maps.Animation.DROP,
       position:latlng
             });
+
+            let content = "<p>Pace you are looking !</p>"+ "<b>"+ place.name +"<b>"+"<p>" +place.vicinity+"</p>" 
+                    ;          
+                    let infoWindow = new google.maps.InfoWindow({
+                    content: content
+                    });
+                
+                    google.maps.event.addListener(markers, 'click', () => {
+                    infoWindow.open(this.map, markers);
+                    });
       }
 
 }

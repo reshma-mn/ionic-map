@@ -10,38 +10,38 @@
       <button ion-item (click)="placess('airport')">
       <ion-icon name="plane" item-start color="danger"></ion-icon>
       <ion-label>Airports</ion-label>
-      <button ion-button outline item-end (click)="showMap()" >All</button>
+      <button ion-button outline item-end (click)="showMap('airport')" >All</button>
       </button>
 
     
     <button ion-item (click)="placess('hospital')">
       <ion-icon name="heart" item-start color="primary"></ion-icon>
       <ion-label>Hospitals</ion-label>
-      <button ion-button outline item-end (click)="showMap()" >All</button>
+      <button ion-button outline item-end (click)="showMap('hospital')" >All</button>
     </button>
 
     <button ion-item (click)="placess('atm')">
       <ion-icon name="card" item-start color="primary"></ion-icon>
       <ion-label>ATM</ion-label>
-      <button ion-button outline item-end (click)="showMap()" >All</button>  
+      <button ion-button outline item-end (click)="showMap('atm')" >All</button>  
     </button>
 
     <button ion-item (click)="placess('restaurant')">
         <ion-icon name="restaurant" item-start color="primary"></ion-icon>
         <ion-label>Restaurants</ion-label>
-        <button ion-button outline item-end (click)="showMap()" >All</button>
+        <button ion-button outline item-end (click)="showMap('restaurant')" >All</button>
     </button>
 
     <button ion-item (click)="placess('bank')">
       <ion-icon name="cash" item-start color="secondary"></ion-icon>
       <ion-label>Banks</ion-label>
-      <button ion-button outline item-end (click)="showMap()" >All</button>
+      <button ion-button outline item-end (click)="showMap('bank')" >All</button>
     </button>
 
     <button ion-item (click)="placess('gym')">
       <ion-icon name="body" item-start color="secondary"></ion-icon>
       <ion-label>Gym</ion-label>
-      <button ion-button outline item-end  (click)="showMap()" >All</button>
+      <button ion-button outline item-end  (click)="showMap('gym')" >All</button>
     </button>
 
   </ion-list>
@@ -56,12 +56,7 @@
 
     </ion-list>
   </div>
-   <!-- <ion-segment [(ngModel)]="showplace" color="primary" >
-    <ion-segment-button value="place" (ionSelect)="showMap()">
-      All
-    </ion-segment-button> 
-   
-  </ion-segment> -->
+  
 </ion-content>
   
 

@@ -23,22 +23,27 @@ export class DirectionPage {
     
   }
 
-  showMap(){
-    this.navCtrl.push(LocationSelectPage,this.places);
-  }
+showMap(type){
 
-  showPlace(place){
-    this.navCtrl.push(PlacePage,place);
-  }
-  
-  placess(type){
-    console.log(type)
-    this.api.getPlacess(type).subscribe(res=>{
-    this.places = res.results; 
-    console.log(res) 
-    console.log(this.places);
-    }) 
-  }
+this.api.getPlacess(type).subscribe(res=>{
+this.places = res.results; 
+this.navCtrl.push(PlacePage,this.places);
 
-  
+});
+
+
+}
+
+showPlace(place){
+let p=[place];
+this.navCtrl.push(PlacePage,p);
+}
+
+
+placess(type){
+this.api.getPlacess(type).subscribe(res=>{
+this.places = res.results; 
+});
+}
+
 }

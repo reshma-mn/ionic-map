@@ -12,7 +12,7 @@ import { DirectionPage } from '../pages/direction/direction';
 import { ApiService } from '../services/api.service';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
-import { LocationSelectPage } from '../pages/location-select/location-select';
+
 import { IonicStorageModule } from '@ionic/storage';
 import { PlacePage } from '../pages/place/place';
 
@@ -23,7 +23,7 @@ import { PlacePage } from '../pages/place/place';
     HomePage,
     DirectionPage,
     PlacePage,
-    LocationSelectPage
+ 
     
   ],
   imports: [
@@ -39,7 +39,7 @@ import { PlacePage } from '../pages/place/place';
     HomePage,
     DirectionPage,
     PlacePage,
-    LocationSelectPage
+
   ],
   providers: [
     StatusBar,

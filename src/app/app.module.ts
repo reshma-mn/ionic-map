@@ -6,25 +6,46 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { Geolocation ,GeolocationOptions ,Geoposition ,PositionError } from '@ionic-native/geolocation';
+import { DirectionPage } from '../pages/direction/direction';
+
+import { ApiService } from '../services/api.service';
+import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
+import { LocationSelectPage } from '../pages/location-select/location-select';
+import { IonicStorageModule } from '@ionic/storage';
+
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    DirectionPage,
+ 
+    LocationSelectPage
+    
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    FormsModule,
+    HttpModule,
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    DirectionPage,
+   
+    LocationSelectPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    ApiService,
+    Geolocation,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},  
   ]
 })
 export class AppModule {}

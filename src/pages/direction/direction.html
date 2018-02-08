@@ -1,0 +1,53 @@
+<ion-header>
+    <ion-navbar>
+    <ion-title >
+      Select Place
+    </ion-title>
+    </ion-navbar>
+  </ion-header>
+<ion-content>
+  <ion-list>
+      <button ion-item (click)="placess('airport')">
+      <ion-icon name="plane" item-start color="danger"></ion-icon>
+      <ion-label>Airports</ion-label>
+      </button>
+
+    
+    <button ion-item (click)="placess('hospital')">
+      <ion-icon name="heart" item-start color="primary"></ion-icon>
+      <ion-label>Hospitals</ion-label>
+    </button>
+
+    <button ion-item (click)="placess('atm')">
+      <ion-icon name="card" item-start color="primary"></ion-icon>
+      <ion-label>ATM</ion-label>
+    </button>
+    <button ion-item (click)="placess('restaurant')">
+        <ion-icon name="restaurant" item-start color="primary"></ion-icon>
+        <ion-label>Restaurants</ion-label>
+    </button>
+
+    <button ion-item (click)="placess('bank')">
+      <ion-icon name="cash" item-start color="secondary"></ion-icon>
+      <ion-label>Banks</ion-label>
+    </button>
+
+    <button ion-item (click)="placess('gym')">
+      <ion-icon name="body" item-start color="secondary"></ion-icon>
+      <ion-label>Gym</ion-label>
+    </button>
+
+  </ion-list>
+
+  <div style="background:rgb(161, 196, 236);">
+    <ion-list>
+    <ion-item *ngFor="let place of places" (click)="showMap()"  color="primary" >
+        <p>{{place.name}}</p>
+    </ion-item>
+    </ion-list>
+  </div>
+
+</ion-content>
+  
+
+
